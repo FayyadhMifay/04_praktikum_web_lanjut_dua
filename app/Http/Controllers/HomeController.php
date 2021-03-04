@@ -6,14 +6,20 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    // public function index(){
-    //     return 'Selamat Datang';
-    // }
-    public function home() {
-        $data = array (
-            'name' => 'Halaman Home',
-            'url' => '<a href="https://www.educastudio.com">https://www.educastudio.com</a>'
-        );
-        return view('home',$data);
-       }
-    }   
+    //
+    public function index() {
+        return view('index');
+    }
+
+    public function portfolio() {
+        return view('portfolio');
+    }
+
+    public function about() {
+        return view('about');
+    }
+
+    public function contact() {
+        return view('contact');
+    }
+}

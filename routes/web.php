@@ -1,11 +1,6 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\ProgramController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,18 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'home']);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::prefix('category')->group(function () {
-    Route::get('/{id}', [ProductController::class,'product']);
-});
-
-Route::get('/news/{id?}', [NewsController::class,'news']);
-
-Route::prefix('program')->group(function () {
-    Route::get('/{id}', [ProgramController::class,'program']);
-});
-
-Route::get('/about-us', [AboutController::class,'about']);
-
-Route::resource('contact-us', ContactController::class);
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/index.blade.php', [HomeController::class, 'index']);
+Route::get('/about.blade.php', [HomeController::class, 'about']);
+Route::get('/portfolio.blade.php', [HomeController::class, 'portfolio']);
+Route::get('/contact.blade.php', [HomeController::class, 'contact']);
